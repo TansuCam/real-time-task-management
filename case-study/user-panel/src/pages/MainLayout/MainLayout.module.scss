@@ -1,0 +1,149 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.mainLayout {
+  min-height: 100vh;
+}
+
+.sider {
+  @include mobile {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px !important;
+    max-width: 80vw !important;
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform $transition-base;
+
+    &.siderOpen {
+      transform: translateX(0);
+    }
+  }
+}
+
+.siderHeader {
+  padding: $spacing-lg;
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include mobile {
+    padding: $spacing-md;
+  }
+
+  h4 {
+    color: $bg-primary !important;
+    margin: 0 !important;
+    font-size: $font-size-lg !important;
+    font-weight: $font-weight-bold !important;
+
+    @include mobile {
+      font-size: $font-size-base !important;
+    }
+  }
+}
+
+.header {
+  background: $bg-primary !important;
+  padding: 0 $spacing-lg !important;
+  @include flex-between;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  @include mobile {
+    padding: 0 $spacing-md !important;
+  }
+}
+
+.headerLeft {
+  @include flex-center;
+  gap: $spacing-md;
+
+  @include mobile {
+    gap: $spacing-sm;
+  }
+}
+
+.menuButton {
+  display: none !important;
+  
+  @include mobile {
+    display: flex !important;
+  }
+}
+
+.headerUser {
+  @include flex-center;
+  gap: $spacing-sm;
+
+  span {
+    color: $text-primary;
+    font-weight: $font-weight-medium;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.headerActions {
+  @include flex-center;
+  gap: $spacing-sm;
+
+  @include mobile {
+    gap: $spacing-xs;
+  }
+}
+
+.languageSelector {
+  min-width: 120px;
+
+  @include mobile {
+    min-width: 100px;
+  }
+}
+
+.content {
+  margin: $spacing-lg;
+  background: $bg-secondary;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  min-height: calc(100vh - 64px - #{$spacing-lg} * 2);
+
+  @include mobile {
+    margin: $spacing-md;
+    padding: $spacing-md;
+    min-height: calc(100vh - 64px - #{$spacing-md} * 2);
+  }
+
+  @include respond-to('sm') {
+    margin: $spacing-sm;
+    padding: $spacing-sm;
+  }
+}
+
+.mobileOverlay {
+  display: none;
+
+  @include mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-base;
+
+    &.overlayVisible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

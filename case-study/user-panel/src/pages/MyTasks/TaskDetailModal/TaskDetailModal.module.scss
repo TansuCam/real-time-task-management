@@ -1,0 +1,46 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.detailRow {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-sm;
+  border-bottom: 1px solid $border-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+}
+
+.detailLabel {
+  font-weight: $font-weight-bold;
+  color: $text-secondary;
+  min-width: 150px;
+  flex-shrink: 0;
+
+  @include mobile {
+    min-width: auto;
+    font-size: $font-size-sm;
+  }
+}
+
+.detailValue {
+  color: $text-primary;
+  flex: 1;
+  word-break: break-word;
+
+  @include mobile {
+    font-size: $font-size-sm;
+  }
+}

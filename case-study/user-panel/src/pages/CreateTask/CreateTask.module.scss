@@ -1,0 +1,58 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.createTaskPage {
+  max-width: 800px;
+  margin: 0 auto;
+
+  @include mobile {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  h1 {
+    margin-bottom: $spacing-lg;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+}
+
+.taskForm {
+  @include card;
+  padding: $spacing-xl;
+
+  @include mobile {
+    padding: $spacing-md;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .formItem {
+    margin-bottom: $spacing-lg;
+
+    @include mobile {
+      margin-bottom: $spacing-md;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-primary;
+      margin-bottom: $spacing-xs;
+      display: block;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    margin-top: $spacing-md;
+
+    @include mobile {
+      height: 48px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.detailContent {
+  padding: $spacing-md 0;
+}
+
+.detailRow {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $border-light;
+  gap: $spacing-md;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .detailLabel {
+    font-weight: $font-weight-semibold;
+    color: $text-secondary;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .detailValue {
+    color: $text-primary;
+    word-break: break-word;
+    flex: 1;
+  }
+}
