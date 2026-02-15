@@ -1,4 +1,4 @@
-# Case Study - Real-Time Task Management System
+# Real-Time Task Management System
 
 A monorepo project with real-time communication between user and admin panels using WebSocket. Full i18n support (TR/EN) with custom form components and Redux Toolkit async thunks.
 
